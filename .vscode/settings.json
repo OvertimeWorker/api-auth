@@ -1,0 +1,14 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.endOfLine": "lf",
+  "files.eol": "\n",
+
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "package.json": "pnpm-lock.yaml, .pnpm-debug.log, .prettier*, prettier*, eslint*, .eslint*, LICENSE*, README*, .npmrc, .gitignore, jest.config.js",
+    "Dockerfile": "Dockerfile.*, .dockerignore, docker-compose*",
+    ".gitignore": ".gitattributes",
+    ".env": ".env*"
+  }
+}
