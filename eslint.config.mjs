@@ -69,6 +69,7 @@ export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
+    ignores: ["dist/", "node_modules/", "prisma.config.ts"],
     files: ["**/*.ts"],
     languageOptions: {
       parser: tseslint.parser,
