@@ -4,7 +4,8 @@
     "./dist",
     "**/*.test.ts",
     "jest.config.js",
-    "eslint.config.mjs"
+    "eslint.config.mjs",
+    "prisma.config.ts"
   ],
   "ts-node": {
     "transpileOnly": true,

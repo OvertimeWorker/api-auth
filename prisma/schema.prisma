@@ -1,0 +1,21 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["partialIndexes"]
+}
+
+datasource db {
+  provider = "postgresql"
+  schemas  = ["auth"]
+}
+
+model Credential {
+  id           Int       @id @default(autoincrement())
+  email        String    @map("email") @db.VarChar(255)
+  passwordHash String    @map("password_hash")
+  isBanned     Boolean   @default(false) @map("is_banned")
+  verifiedAt   DateTime? @map("verified_at")
+
+  @@unique(email, where: { verifiedAt: { not: null } })
+  @@map("credential")
+  @@schema("auth")
+}
