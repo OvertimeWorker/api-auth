@@ -47,7 +47,7 @@ const namingRule = {
         }
 
         // Suffix Logic
-        const collections = ["routes", "utils", "types", "tests"]
+        const collections = ["routes", "utils", "types"]
         const isCollection = collections.includes(firstFolder)
         const suffix = isCollection
           ? pluralize.plural(firstFolder)
@@ -66,10 +66,12 @@ const namingRule = {
 }
 
 export default [
+  {
+    ignores: ["dist/**", "node_modules/**", "prisma.config.ts", "coverage/**"],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ["dist/", "node_modules/", "prisma.config.ts"],
     files: ["**/*.ts"],
     languageOptions: {
       parser: tseslint.parser,
@@ -120,7 +122,4 @@ export default [
     },
   },
   prettier,
-  {
-    ignores: ["dist/**", "node_modules/**", "coverage/**"],
-  },
 ]

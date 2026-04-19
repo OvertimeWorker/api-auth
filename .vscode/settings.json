@@ -3,7 +3,12 @@
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
-  "prettier.endOfLine": "lf",
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+  },
+  "editor.codeActionsOnSave": {
+    "source.sortPackageJson": "always"
+  },
   "files.eol": "\n",
 
   "explorer.fileNesting.enabled": true,

@@ -7,9 +7,9 @@ When creating a pull request, please follow the template provided. This will hel
 ### Title
 | **Types** | **When to use it**                               | **Example**                                  |
 |-----------|--------------------------------------------------|----------------------------------------------|
-| feat      | A new endpoint, service, or logic.               | feat(auth): add login endpoint               |
-| fix       | Fixing a bug (even a small one).                 | fix(database): handle connection timeout     |
-| refactor  | Changing code without changing behavior.         | refactor(utils): move date helpers to shared |
+| feat      | A new endpoint, service, or logic.               | feat: add login endpoint                     |
+| fix       | Fixing a bug (even a small one).                 | fix: handle database connection timeout      |
+| refactor  | Changing code without changing behavior.         | refactor: move date helpers to shared        |
 | chore     | Maintenance (pnpm updates, linting tweaks).      | chore: update eslint-plugin-import-x         |
 | docs      | Documentation only changes.                      | docs: add setup instructions to README       |
 | style     | Formatting (Prettier runs) with no logic change. | style: fix indentation in user service       |
