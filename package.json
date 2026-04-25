@@ -71,7 +71,7 @@
     ],
     "overrides": {
       "jest-mock-extended>typescript": "6.0.3",
-      "overtime-worker-api-utils": "git+ssh://git@github.com:OvertimeWorker/api-utils.git#v1.0.7"
+      "overtime-worker-api-utils": "git+ssh://git@github.com:OvertimeWorker/api-utils.git#v1.0.8"
     }
   }
 }
