@@ -10,6 +10,7 @@
     "source.sortPackageJson": "always"
   },
   "files.eol": "\n",
+  "files.encoding": "utf8",
 
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
