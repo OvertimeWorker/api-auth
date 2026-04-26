@@ -3,7 +3,7 @@ import { app } from "./app.js"
 
 const PORT = process.env["PORT"] || 5000
 
-const server = app.listen(PORT, () => {
+const server = app.listen(Number(PORT), "0.0.0.0", () => {
   // eslint-disable-next-line no-console
   console.log(`🚀 Server ready at http://localhost:${PORT}`)
 })
