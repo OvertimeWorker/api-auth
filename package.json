@@ -13,6 +13,7 @@
     "prisma:migrate": "prisma migrate dev",
     "prisma:migrate:create": "prisma migrate dev --create-only",
     "prisma:migrate:deploy": "prisma migrate deploy",
+    "prisma:reset": "prisma migrate reset",
     "prisma:seed": "prisma db seed",
     "prisma:setup": "prisma generate && prisma migrate dev && prisma db seed",
     "prisma:studio": "prisma studio",
@@ -22,7 +23,6 @@
     "discover-paths": "pnpm build && cross-env DISCOVER_PATH=true node --no-warnings --experimental-vm-modules dist/scripts/discover-paths.script.js"
   },
   "dependencies": {
-    "@candoimage/prisma-extension-soft-delete": "2.1.1",
     "@prisma/adapter-pg": "7.5.0",
     "@prisma/client": "7.5.0",
     "compression": "1.8.1",
@@ -31,7 +31,7 @@
     "express": "5.2.1",
     "http-status-codes": "2.3.0",
     "morgan": "1.10.1",
-    "overtime-worker-api-utils": "github:OvertimeWorker/api-utils"
+    "overtime-worker-api-utils": "git+ssh://git@github.com/OvertimeWorker/api-utils.git#v1.0.9"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
@@ -70,8 +70,7 @@
       "overtime-worker-api-utils"
     ],
     "overrides": {
-      "jest-mock-extended>typescript": "6.0.3",
-      "overtime-worker-api-utils": "git+ssh://git@github.com:OvertimeWorker/api-utils.git#v1.0.8"
+      "jest-mock-extended>typescript": "6.0.3"
     }
   }
 }

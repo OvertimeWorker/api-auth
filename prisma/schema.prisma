@@ -3,6 +3,10 @@ generator client {
   previewFeatures = ["partialIndexes"]
 }
 
+generator metadata {
+  provider = "gen-metadata"
+}
+
 datasource db {
   provider = "postgresql"
   schemas  = ["auth"]
@@ -30,7 +34,7 @@ model RefreshToken {
   userAgent    String   @map("user_agent")
   credentialId Int      @map("credential_id")
 
-  Credential Credential @relation(fields: [credentialId], references: [id])
+  credential Credential @relation(fields: [credentialId], references: [id])
 
   @@map("refresh_token")
   @@schema("auth")
