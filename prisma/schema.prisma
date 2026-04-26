@@ -7,3 +7,40 @@ datasource db {
   provider = "postgresql"
   schemas  = ["auth"]
 }
+
+model Credential {
+  id           Int       @id @default(autoincrement()) @map("id")
+  email        String    @unique @map("email") @db.VarChar(255)
+  passwordHash String    @map("password_hash")
+  isBanned     Boolean   @default(false) @map("is_banned")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  verifiedAt   DateTime? @map("verified_at")
+  lastLoginAt  DateTime? @map("last_login_at")
+
+  refreshTokens RefreshToken[]
+
+  @@map("credential")
+  @@schema("auth")
+}
+
+model RefreshToken {
+  token        String   @id @default(uuid()) @map("token")
+  expiresAt    DateTime @map("expires_at")
+  ipAddress    String   @map("ip_address")
+  userAgent    String   @map("user_agent")
+  credentialId Int      @map("credential_id")
+
+  Credential Credential @relation(fields: [credentialId], references: [id])
+
+  @@map("refresh_token")
+  @@schema("auth")
+}
+
+model SecurityToken {
+  token     String   @id @default(uuid()) @map("token")
+  expiresAt DateTime @map("expires_at")
+  type      String   @map("type")
+
+  @@map("security_token")
+  @@schema("auth")
+}
